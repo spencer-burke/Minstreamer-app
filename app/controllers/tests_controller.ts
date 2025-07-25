@@ -3,7 +3,7 @@ import drive from '@adonisjs/drive/services/main'
 
 export default class TestsController {
   async index({ view }: HttpContext) {
-    const videoUrl = await drive.use('s3').getSignedUrl('code_on_screen.mp4', { 
+    const videoUrl: string = await drive.use('s3').getSignedUrl('code_on_screen.mp4', { 
       expiresIn: '1h' 
     })
     
